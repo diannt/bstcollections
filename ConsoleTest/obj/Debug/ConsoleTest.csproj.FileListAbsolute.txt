@@ -1,0 +1,9 @@
+C:\Users\acer\Downloads\Goletas.Collections\ConsoleTest\bin\Debug\ConsoleTest.exe.config
+C:\Users\acer\Downloads\Goletas.Collections\ConsoleTest\bin\Debug\ConsoleTest.exe
+C:\Users\acer\Downloads\Goletas.Collections\ConsoleTest\bin\Debug\ConsoleTest.pdb
+C:\Users\acer\Downloads\Goletas.Collections\ConsoleTest\bin\Debug\Goletas.Collections.dll
+C:\Users\acer\Downloads\Goletas.Collections\ConsoleTest\bin\Debug\Goletas.Collections.pdb
+C:\Users\acer\Downloads\Goletas.Collections\ConsoleTest\bin\Debug\Goletas.Collections.xml
+C:\Users\acer\Downloads\Goletas.Collections\ConsoleTest\obj\Debug\ConsoleTest.csprojResolveAssemblyReference.cache
+C:\Users\acer\Downloads\Goletas.Collections\ConsoleTest\obj\Debug\ConsoleTest.exe
+C:\Users\acer\Downloads\Goletas.Collections\ConsoleTest\obj\Debug\ConsoleTest.pdb

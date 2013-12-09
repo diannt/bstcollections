@@ -8,8 +8,8 @@
     <ProjectGuid>{657E554A-1A39-4458-B997-305817B80D73}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Goletas.Collections</RootNamespace>
-    <AssemblyName>Goletas.Collections</AssemblyName>
+    <RootNamespace>BST.Collections</RootNamespace>
+    <AssemblyName>BST.Collections</AssemblyName>
     <StartupObject>
     </StartupObject>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -42,7 +42,7 @@
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Goletas.Collections.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\BST.Collections.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -52,7 +52,7 @@
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Goletas.Collections.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\BST.Collections.xml</DocumentationFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
