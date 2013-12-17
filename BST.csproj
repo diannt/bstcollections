@@ -65,9 +65,9 @@
     <Compile Include="Collection\ILinkedStack.cs" />
     <Compile Include="Collection\KeyValuePair.cs" />
     <Compile Include="Collection\LinkedStack.cs" />
-    <Compile Include="Collection\Path.cs" />
     <Compile Include="Collection\SortedDictionary.cs" />
     <Compile Include="Collection\SortedSet.cs" />
+    <Compile Include="Collection\Dweller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

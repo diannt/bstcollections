@@ -15,29 +15,29 @@ namespace ConsoleTest
         {
             Path temp = null;
             string key;
-            var sortedBST = new System.Collections.Generic.SortedDictionary<string, Path>();
+            var sortedBST = new System.Collections.Generic.SortedDictionary<string, Dweller>();
             while (true)
             {
-                Console.WriteLine("##############################################");
-                Console.WriteLine("Enter 0 to generate the path");
-                Console.WriteLine("Enter 1 to insert into the tree");
-                Console.WriteLine("Enter 2 to search in the tree by the key");
-                Console.WriteLine("Enter 3 to delete from the tree by the key");
-                Console.WriteLine("Enter 4 to clear the tree");
-                Console.WriteLine("Enter 8 to show the tree");
-                Console.WriteLine("Enter 9 to exit");
-                Console.WriteLine("##############################################");
-                int k = -1;
-                if (int.TryParse(Console.ReadLine(), out k))
+                Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine("Type:");
+                Console.WriteLine("1 to create new dweller");
+                Console.WriteLine("2 to search in tree by the key");
+                Console.WriteLine("3 to delete from the tree by the key");
+                Console.WriteLine("4 to clear the tree");
+                Console.WriteLine("9 to show the tree");
+                Console.WriteLine("0 to exit");
+                Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++");
+                int z = -1;
+                if (int.TryParse(Console.ReadLine(), out z))
                 {
-                    switch (k)
+                    switch (z)
                     {
-                        case 0:
-                            temp = new Path();
-                            Console.WriteLine("Path is generated!");
-                            Console.WriteLine(temp.Read());
-                            break;
                         case 1:
+                            temp = new Path();
+                            Console.WriteLine("Dweller is created!");
+                            Console.WriteLine(temp.Print());
+                            break;
+                        case 2:
                             if (temp != null)
                             {
                                 Console.WriteLine("You should use as key words like 'bus', 'car', 'train', etc!");
@@ -58,7 +58,7 @@ namespace ConsoleTest
                                 Console.WriteLine("Generate path before!");
                             }
                             break;
-                        case 2:
+                        case 3:
                             Console.WriteLine("Enter search key!");
                                 key = Console.ReadLine();
                                 if (key != "")
@@ -84,7 +84,7 @@ namespace ConsoleTest
                                     Console.WriteLine("You're doing wrong!");
                                 }
                             break;
-                        case 3:
+                        case 4:
                             Console.WriteLine("Enter deleting key!");
                                 key = Console.ReadLine();
                             if (key != "")
@@ -106,7 +106,7 @@ namespace ConsoleTest
                                 }
                             }
                             break;
-                        case 4:
+                        case 5:
                                 Console.WriteLine("Are you sure? Type y to clear.");
                                 char t;
                             if (char.TryParse(Console.ReadLine(), out t))
@@ -123,7 +123,7 @@ namespace ConsoleTest
                                 }
                             }
                             break;
-                        case 8:
+                        case 9:
                             Console.WriteLine("Let's show tree.");
                             if (sortedBST.Keys.Count != 0)
                             {
@@ -139,7 +139,7 @@ namespace ConsoleTest
                                 Console.WriteLine("Tree is gone.");
                             }
                             break;
-                        case 9:
+                        case 0:
                             Environment.Exit(0);
                             break;
                     }

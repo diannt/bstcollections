@@ -7,27 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BST.Collections.Collection;
+using BST.Collections;
 
 namespace FormTest
 {
     public partial class Form1 : Form
     {
-        private System.Collections.Generic.SortedDictionary<string, Path> sortedBST;
-        private Path temp = null;
+        private System.Collections.Generic.SortedDictionary<string, Dweller> sortedBST;
+        private Dweller temp = null;
         private string key;
         public Form1()
         {
             InitializeComponent(); 
-            sortedBST = new System.Collections.Generic.SortedDictionary<string, Path>();
+            //инициализируем дерево для добавления жителей
+            sortedBST = new System.Collections.Generic.SortedDictionary<string, Dweller>();
         }
 
-        //Создание нового маршрута
+        //Создание нового жителя
         private void Generate_Click(object sender, EventArgs e)
         {
-            temp = new Path();
-            //пишем логи
-            log.Text = temp.Read() + Environment.NewLine;
+            temp = new Dweller();
+            //запись о событии
+            log.Text = temp.Print() + Environment.NewLine;
         }
 
         //Добавление маршрута в дерево
@@ -36,10 +37,10 @@ namespace FormTest
             if (ke.Text != "")
             {
                 key = ke.Text;
-                log.Text = log.Text + "key " + key + " path: " + temp.Read() + Environment.NewLine;
+                log.Text = log.Text + "key " + key + " dweller: " + temp.Print() + Environment.NewLine;
                 try
                 {
-                    //метод дерева принимает в себя ключ и объект маршрута
+                    //метод дерева принимает в себя ключ и объект жителя
                     sortedBST.Add(key, temp);
                 }
                 catch (Exception ex)
@@ -47,7 +48,7 @@ namespace FormTest
                     log.Text = log.Text + ex.Message + Environment.NewLine;
                 }
             }
-            else MessageBox.Show("Сначала напишите ключ!");
+            else MessageBox.Show("Сначала введите ключ!");
         }
 
         //поиск в дереве
@@ -56,28 +57,28 @@ namespace FormTest
             if (ke.Text != "")
             {
                 key = ke.Text;
-                Path sPath = null;
+                Dweller sDweller = null;
                 
                 log.Text = log.Text + "key " + key + Environment.NewLine;
                 //если дерево содержит нужный нам ключ
                 if (sortedBST.ContainsKey(key))
                 {
                     //пытаемся получить его значение
-                    if (sortedBST.TryGetValue(key, out sPath))
-                        log.Text = log.Text + sPath.Read() + Environment.NewLine;
+                    if (sortedBST.TryGetValue(key, out sDweller))
+                        log.Text = log.Text + sDweller.Print() + Environment.NewLine;
                     else
                     {
-                        MessageBox.Show("Не получается взять значение!");
+                        MessageBox.Show("Не выходит взять значение!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Значение не найдено");
+                    MessageBox.Show("Значения нет");
                 }
             }
             else
             {
-                MessageBox.Show("Что-то пошло не так!");
+                MessageBox.Show("Что-то не так!");
             }
         }
 
@@ -98,12 +99,12 @@ namespace FormTest
                         log.Text = log.Text + "Ключ успешно удалён!" + Environment.NewLine;
                     else
                     {
-                        MessageBox.Show("Нельзя удалить!");
+                        MessageBox.Show("Не получилось удалить!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("В этом дереве нет таких ключей!");
+                    MessageBox.Show("В этом дереве нет такого ключа!");
                 }
             }
         }
@@ -115,23 +116,23 @@ namespace FormTest
             if (sortedBST.Keys.Count != 0)
             {
                 //создаём итератор
-                System.Collections.Generic.SortedDictionary<string, Path>.Enumerator ic = sortedBST.GetEnumerator();
+                System.Collections.Generic.SortedDictionary<string, Dweller>.Enumerator ic = sortedBST.GetEnumerator();
                //и идём вглубь
                 while (ic.MoveNext())
                 {
-                    log.Text = log.Text + ic.Current.Key + " " + ((Path)ic.Current.Value).Read() + Environment.NewLine;
+                    log.Text = log.Text + ic.Current.Key + " " + ((Dweller)ic.Current.Value).Print() + Environment.NewLine;
                 }
-                log.Text = log.Text + "Дерево показано." + Environment.NewLine;
+                log.Text = log.Text + "Дерево отображено." + Environment.NewLine;
             }
             else
             {
-                log.Text = log.Text + "Дерево закончилось" + Environment.NewLine;
+                log.Text = log.Text + "Дерево завершилось" + Environment.NewLine;
             }
         }
 
         private void ke_MouseClick(object sender, MouseEventArgs e)
         {
-            //если нажали на ключ и он остался таким же
+            //если нажали на ключ и он по умолчанию
             if (ke.Text == "Ключ")
             ke.Text = "";
         }
